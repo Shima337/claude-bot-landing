@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --bg-dark: #0f0f14;
+  --bg-card: rgba(30, 30, 46, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --text-primary: #f4f4f5;
+  --text-muted: #a1a1aa;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[var(--bg-dark)] text-[var(--text-primary)] antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-headline {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+}
