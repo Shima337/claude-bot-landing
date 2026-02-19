@@ -3,8 +3,8 @@
 Landing page for a Claude AI automation service — ready-to-deploy bots connected to Notion, Slack, Telegram, CRM, and more.
 
 - **Stack:** Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion
-- **Leads:** form submits to `/api/leads`, stored in SQLite
-- **API:** `GET /api/leads` returns all leads (optional `X-API-Key`), `POST /api/leads` saves a lead
+- **Leads:** form (name, phone, email) submits to `POST /api/leads`, stored in SQLite inside the container
+- **API:** `GET /api/leads` — open this URL to get all applications as JSON (Railway doesn’t show SQLite in the UI, so this is how you access the data). Optional: protect with `LEADS_API_KEY` and header `X-API-Key`
 
 ## Local dev
 
@@ -52,7 +52,7 @@ In Railway **Variables** add:
 
 - `LEADS_API_KEY` = any secret string
 
-Then only requests with header `X-API-Key: <your-secret>` can call `GET https://your-app.railway.app/api/leads`.
+Then only requests with header `X-API-Key: <your-secret>` can call `GET https://your-app.railway.app/api/leads`. Without the key, opening that link in the browser returns the list of leads (name, phone, email, created_at) as JSON.
 
 ## Env reference
 

@@ -11,6 +11,8 @@ const trustBadges = [
 ];
 
 export default function CTA() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -23,7 +25,7 @@ export default function CTA() {
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ name, phone, email }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -32,6 +34,8 @@ export default function CTA() {
         return;
       }
       setStatus("success");
+      setName("");
+      setPhone("");
       setEmail("");
       setMessage("Thanks! We'll be in touch soon.");
     } catch {
@@ -60,8 +64,26 @@ export default function CTA() {
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-12"
+            className="flex flex-col gap-3 max-w-md mx-auto mb-12"
           >
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              required
+              disabled={status === "loading"}
+              className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/20 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-60"
+            />
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Phone number"
+              required
+              disabled={status === "loading"}
+              className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/20 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-60"
+            />
             <input
               type="email"
               value={email}
@@ -69,12 +91,12 @@ export default function CTA() {
               placeholder="you@company.com"
               required
               disabled={status === "loading"}
-              className="flex-1 px-4 py-3.5 rounded-xl bg-white/5 border border-white/20 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-60"
+              className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/20 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-60"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3.5 rounded-xl bg-primary hover:bg-indigo-600 text-white font-semibold transition-colors disabled:opacity-60"
+              className="w-full px-6 py-3.5 rounded-xl bg-primary hover:bg-indigo-600 text-white font-semibold transition-colors disabled:opacity-60"
             >
               {status === "loading" ? "Sending…" : "Get Started"}
             </button>

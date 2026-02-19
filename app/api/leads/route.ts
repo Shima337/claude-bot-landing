@@ -4,14 +4,22 @@ import { addLead, getLeads } from "@/lib/db";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    const name = typeof body?.name === "string" ? body.name.trim() : "";
+    const phone = typeof body?.phone === "string" ? body.phone.trim() : "";
     const email = typeof body?.email === "string" ? body.email.trim() : null;
+    if (!name) {
+      return NextResponse.json({ error: "Name is required" }, { status: 400 });
+    }
+    if (!phone) {
+      return NextResponse.json({ error: "Phone is required" }, { status: 400 });
+    }
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { error: "Valid email is required" },
         { status: 400 }
       );
     }
-    const lead = addLead(email);
+    const lead = addLead({ name, phone, email });
     return NextResponse.json(lead, { status: 201 });
   } catch (e) {
     console.error("POST /api/leads", e);

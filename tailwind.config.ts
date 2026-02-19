@@ -12,10 +12,10 @@ const config: Config = {
         primary: "#6366f1",
         accent: "#f59e0b",
       },
-      fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
-      },
+fontFamily: {
+      sans: ["system-ui", "Segoe UI", "Roboto", "sans-serif"],
+      display: ["system-ui", "Segoe UI", "Roboto", "sans-serif"],
+    },
     },
   },
   plugins: [],
