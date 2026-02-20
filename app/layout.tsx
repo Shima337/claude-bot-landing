@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ClaudeBot — Your AI That Actually Works For You",
+  title: "OpenClaw — Open Claw that actually works for you",
   description:
-    "We deploy a fully configured Claude AI assistant connected to your tools — Notion, Slack, Telegram, CRM — so you can automate your daily workflows without touching a single config file.",
+    "We set up and deploy Open Claw for you — connected to Notion, Slack, Telegram, CRM — so you can automate your daily workflows without touching a single config file.",
 };
 
 export default function RootLayout({

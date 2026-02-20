@@ -1,6 +1,6 @@
-# ClaudeBot Landing
+# OpenClaw Landing
 
-Landing page for a Claude AI automation service — ready-to-deploy bots connected to Notion, Slack, Telegram, CRM, and more.
+Landing page for Open Claw setup and deployment — we configure and deploy Open Claw for you, connected to Notion, Slack, Telegram, CRM, and more.
 
 - **Stack:** Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion
 - **Leads:** form (name, phone, email) submits to `POST /api/leads`, stored in SQLite inside the container
@@ -17,25 +17,11 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy on Railway
 
-### 1. Create a Git repo and push
-
-On GitHub (or GitLab) create a **new empty repository** (no README, no .gitignore).
-
-Then in this folder:
-
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git branch -M main
-git push -u origin main
-```
-
-### 2. Deploy on Railway
-
 1. Go to [railway.app](https://railway.app), sign in, **New Project** → **Deploy from GitHub repo**.
-2. Choose your repository. Railway will detect Next.js and build with `npm run build`, start with `npm start`.
+2. Choose this repository (`Shima337/claude-bot-landing`). Railway will detect Next.js and use `npm run build` + `npm start`.
 3. After first deploy: **Settings** → **Generate Domain** to get a public URL.
 
-### 3. Persist leads (SQLite)
+### Persist leads (SQLite)
 
 So leads survive restarts and redeploys:
 
@@ -46,7 +32,7 @@ So leads survive restarts and redeploys:
 
 (If you skip the volume, leads will be lost on each redeploy.)
 
-### 4. Optional: protect GET /api/leads
+### Optional: protect GET /api/leads
 
 In Railway **Variables** add:
 

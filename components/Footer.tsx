@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   Product: [
@@ -28,13 +29,20 @@ export default function Footer() {
           <div>
             <Link
               href="#"
-              className="font-display font-bold text-xl text-white"
+              className="flex items-center gap-2 font-display font-bold text-xl text-white"
             >
-              ClaudeBot
+              <Image
+                src="/logo.png"
+                alt="OpenClaw"
+                width={32}
+                height={32}
+                className="rounded object-contain"
+              />
+              OpenClaw
             </Link>
             <p className="mt-3 text-zinc-500 text-sm max-w-xs">
-              Your AI that actually works — connected to your tools, deployed
-              for you.
+              Open Claw that actually works — connected to your tools,
+              deployed for you.
             </p>
           </div>
           <div>
@@ -84,7 +92,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-8 border-t border-white/10 text-center text-zinc-500 text-sm">
-          © {new Date().getFullYear()} ClaudeBot. All rights reserved.
+          © {new Date().getFullYear()} OpenClaw. All rights reserved.
         </div>
       </div>
     </footer>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -26,9 +27,16 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-18">
           <Link
             href="#"
-            className="font-display font-bold text-xl text-white tracking-tight"
+            className="flex items-center gap-2 font-display font-bold text-xl text-white tracking-tight"
           >
-            ClaudeBot
+            <Image
+              src="/logo.png"
+              alt="OpenClaw"
+              width={40}
+              height={40}
+              className="rounded-lg object-contain"
+            />
+            <span>OpenClaw</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

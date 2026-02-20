@@ -94,7 +94,7 @@ export default function ProblemSection() {
             </div>
             <div>
               <h3 className="font-display font-semibold text-lg text-white mb-2">
-                With ClaudeBot
+                With OpenClaw
               </h3>
               <p className="text-zinc-400 text-sm">
                 We deploy a ready bot, connect your tools securely, and you start

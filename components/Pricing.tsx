@@ -12,7 +12,7 @@ const tiers = [
     icon: Zap,
     description: "Get your first bot live in days.",
     features: [
-      "1 Claude bot",
+      "1 Open Claw bot",
       "Up to 3 integrations",
       "Email support",
       "Standard deployment",

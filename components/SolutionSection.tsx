@@ -8,7 +8,7 @@ const solutions = [
     icon: Bot,
     title: "Ready-to-Go Bot",
     description:
-      "Pre-configured Claude bot deployed to your server. Connect your tools in one click and start automating.",
+      "Pre-configured Open Claw bot deployed to your server. Connect your tools in one click and start automating.",
   },
   {
     icon: Plug,

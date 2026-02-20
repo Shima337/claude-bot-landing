@@ -63,10 +63,8 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-white mb-6 hero-headline"
         >
-          Your AI That{" "}
-          <span className="gradient-text">Actually Works</span>
-          <br />
-          For You
+          Open Claw that{" "}
+          <span className="gradient-text">actually works for you</span>
         </motion.h1>
 
         <motion.p
@@ -75,9 +73,9 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto mb-10"
         >
-          We deploy a fully configured Claude AI assistant connected to your
-          tools — Notion, Slack, Telegram, CRM — so you can automate your daily
-          workflows without touching a single config file.
+          We set up and deploy Open Claw for you — connected to Notion, Slack,
+          Telegram, CRM — so you can automate your daily workflows without
+          touching a single config file.
         </motion.p>
 
         <motion.div
